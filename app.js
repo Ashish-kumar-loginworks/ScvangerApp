@@ -20,22 +20,11 @@ app.use(express.static(path.join(__dirname, 'assets')));
 //     console.log("connection successful");
 // });
 
-<<<<<<< HEAD
-// mongoose.connect('mongodb://localhost/bookstore',{ useNewUrlParser: true });
-=======
->>>>>>> 8b53551df79d6b647e1eeb457b90880361f004d9
 const dba = 'mongodb://yatash:yatash1@ds113169.mlab.com:13169/scvanger';
 mongoose.connect(dba,{ useNewUrlParser: true },function(error){
     if(error) console.log(error);
     console.log("connection successful");
-<<<<<<< HEAD
 })
-=======
-});
-
-
-// mongoose.connect('mongodb://localhost/bookstore',{ useNewUrlParser: true });
->>>>>>> 8b53551df79d6b647e1eeb457b90880361f004d9
 mongoose.set('useCreateIndex', true);
 var db = mongoose.connection;
 
@@ -63,11 +52,7 @@ app.use('/products',productRoutes);
 const orderRoutes = require('./api/routes/orders');
 app.use('/orders',orderRoutes);
 
-<<<<<<< HEAD
 console.log('user')
-=======
-console.log('userrrrrrrrr')
->>>>>>> 8b53551df79d6b647e1eeb457b90880361f004d9
 const userRoutes = require('./routes/user');
 //Routes which handle requests
 app.use('/user',userRoutes);

@@ -53,7 +53,11 @@ exports.user_login = (req,res,next) => {
     User.findOne({ email: req.body.email })
     .exec()
     .then(user => {
+        console.log('kichu')
+        console.log(user)
         if(user){
+            
+            
             var decrypted = helpers.passwordDecrypted(user.password);
                     
                 if(decrypted != req.body.password ) {
@@ -61,6 +65,9 @@ exports.user_login = (req,res,next) => {
                         message: 'Auth Failed'
                     });
                 }else{
+                     console.log('decrypted',decrypted)
+                    
+                    
                     const token = jwt.sign(
                     {
                         email : user.email,

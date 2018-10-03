@@ -55,6 +55,7 @@ app.use('/products',productRoutes);
 const orderRoutes = require('./api/routes/orders');
 app.use('/orders',orderRoutes);
 
+console.log('userrrrrrrrr')
 const userRoutes = require('./routes/user');
 //Routes which handle requests
 app.use('/user',userRoutes);

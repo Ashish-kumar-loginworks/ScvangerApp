@@ -20,7 +20,14 @@ app.use(express.static(path.join(__dirname, 'assets')));
 //     console.log("connection successful");
 // });
 
-mongoose.connect('mongodb://localhost/bookstore',{ useNewUrlParser: true });
+const dba = 'mongodb://yatash:yatash1@ds113169.mlab.com:13169/scvanger';
+mongoose.connect(dba,{ useNewUrlParser: true },function(error){
+    if(error) console.log(error);
+    console.log("connection successful");
+});
+
+
+// mongoose.connect('mongodb://localhost/bookstore',{ useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 var db = mongoose.connection;
 

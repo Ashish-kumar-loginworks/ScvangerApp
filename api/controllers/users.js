@@ -7,6 +7,7 @@ var helpers = require('../middleware/common-function');
 //const xoauth2 = require('xoauth2');
 
 exports.user_signup = (req,res,next) => {
+    console.log('jii')
     User.findOne({email: req.body.email})
     .exec()
     .then(user => {
@@ -53,7 +54,8 @@ exports.user_login = (req,res,next) => {
     .exec()
     .then(user => {
         if(user){
-            var decrypted = helpers.passwordDecrypted(user.password);         
+            var decrypted = helpers.passwordDecrypted(user.password);
+                    
                 if(decrypted != req.body.password ) {
                     return res.status(400).json({
                         message: 'Auth Failed'

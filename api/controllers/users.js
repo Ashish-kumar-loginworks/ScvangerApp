@@ -67,6 +67,9 @@ exports.user_login = (req,res,next) => {
                 }else{
                      console.log('decrypted',decrypted)
                     
+                    console.log('email',user.email)
+                    console.log('userid',user._id)
+                    
                     
                     const token = jwt.sign(
                     {

@@ -33,6 +33,10 @@ exports.loginRedirect = (req,res,next) => {
             "password" : password
     })
 }, (err, response, body) => {
+      console.log('body',err);
+      console.log(response);
+      console.log(body);
+      
     data = JSON.parse(body);
     if(response.statusCode == 200 && data.message == "Auth Successful"){
       sess = req.session;

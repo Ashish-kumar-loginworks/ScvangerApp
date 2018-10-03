@@ -27,12 +27,13 @@ exports.loginRedirect = (req,res,next) => {
     "headers": {
         "content-type": "application/json",  
     },
-    "url": "http://localhost:3000/user/login",
+    "url": "https://secure-escarpment-31573.herokuapp.com/user/login",
     "body": JSON.stringify({
             "email" : email,
             "password" : password
     })
 }, (err, response, body) => {
+      console.log('body')
     data = JSON.parse(body);
     if(response.statusCode == 200 && data.message == "Auth Successful"){
       sess = req.session;
